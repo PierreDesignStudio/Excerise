@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <link rel="import"
+          href="https://cdn.rawgit.com/download/polymer-cdn/1.0.1/lib/paper-input/paper-input.html">
+    <link rel="import"
+          href="https://cdn.rawgit.com/download/polymer-cdn/1.0.1/lib/iron-ajax/iron-ajax.html">
+</head>
+
+<body>
+    <dom-module id="data-bind">
+        <template>
+            @{
+                ViewBag.Title = "Polymer Exercise Component";
+            }
+            <h2>@ViewBag.Title.</h2>
+            <h3>@ViewBag.Message</h3>
+
+            <p>Chuck Joke: <b>{{cJoke}}</b></p>
+            <iron-ajax auto
+                       url="http://api.icndb.com/jokes/random"
+                       handle-as="json"
+                       on-response="_handleResponse"
+                       debounce-duration="500">
+            </iron-ajax>
+        </template>
+
+    </dom-module>
+
+    <data-bind></data-bind>
+    <script src="~/Scripts/poly-component.js"></script>
+</body>
+</html>

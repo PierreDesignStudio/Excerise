@@ -26,5 +26,12 @@ namespace testapp.Controllers
 
             return View();
         }
+
+        public ActionResult PolyComponent()
+        {
+            ViewBag.Message = "Hello Archer! Welcome to my Polymer.";
+
+            return View();
+        }
     }
 }
